@@ -1,8 +1,184 @@
-*{
+*, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
 }
 
+:root {
+    --background: hsl(222, 26%, 31%);
+    --keypad-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+    --key-background: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    --key-background-red: hsl(6, 63%, 50%);
+    --key-shadow-red: hsl(6, 70%, 34%);
+    --key-background-light: hsl(30, 25%, 89%);
+    --key-shadow-light: hsl(28, 16%, 65%);
+    --text-dark: hsl(221, 14%, 31%);
+    --text-light: hsl(0, 0%, 100%);
+    --text-special: hsl(0, 0%, 100%);
+}
 
-/*font-family: 'League Spartan', sans-serif;*/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 400px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.header p {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-special);
+    text-transform: uppercase;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+}
+
+.box p {
+    margin-right: 15px;
+    font-size: 10px;
+}
+
+.box-switch {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    width: 50px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: var(--keypad-background);
+}
+
+.btn-switch {
+    position: relative;
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.btn-switch::after {
+    content: '1';
+    position: absolute;
+    top: -17px;
+    left: 3px;
+    display: block;
+    font-size: 10px;
+    color: var(--text-special);
+}
+
+.btn-switch:nth-child(2)::after {
+    content: '2';
+}
+
+.btn-switch:nth-child(3)::after {
+    content: '3';
+}
+
+.box-switch .active {
+    background-color: var(--key-background-red);
+}
+
+.screen{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding: 0 15px;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    background-color: var(--screen-background);
+}
+
+.screen p{
+    font-size: 34px;
+    color: var(--text-special);
+}
+
+.keypad{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--keypad-background);
+}
+
+.btn{
+    width: 80px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+    background-color: var(--key-background-light);
+    box-shadow: 0 2px 2px 0 var(--key-shadow-light);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover{
+    filter: brightness(1.5);
+}
+
+.btn:nth-child(16){
+    font-size: 20px;
+}
+
+.btn-del,
+.btn-long{
+    font-size: 20px;
+    background-color: var(--key-background);
+    color: var(--text-light);
+    box-shadow: 0 2px 2px 0 var(--key-shadow);
+}
+
+.btn-long{
+    width: 175px;
+}
+
+.btn:nth-child(18){
+    background-color: var(--key-background-red);
+    box-shadow: 0 2px 2px 0 var(--key-shadow-red);
+}
+
+@media(max-width: 375px){
+    .container{
+        width: 90%;
+    }
+    .btn{
+        width: 60px;
+        height: 60px;
+    }
+
+    .btn-long{
+        width: 136px
+    }
+
+}

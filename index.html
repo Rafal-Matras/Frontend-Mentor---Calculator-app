@@ -12,19 +12,40 @@
 </head>
 <body>
 <div class="container">
-    <header class="header">
-      <p class="text">calc</p>
-      <div class="box">
-        <p>theme</p>
-
+  <header class="header">
+    <p class="text">calc</p>
+    <div class="box">
+      <p>theme</p>
+      <div class="box-switch">
+        <button class="btn-switch active" data-switch="s1"></button>
+        <button class="btn-switch" data-switch="s2"></button>
+        <button class="btn-switch" data-switch="s3"></button>
       </div>
-    </header>
-    <div class="screen">
-      <p></p>
     </div>
-    <div class="keypad">
-
-    </div>
+  </header>
+  <div class="screen">
+    <p data-store>399,981</p>
+  </div>
+  <div class="keypad">
+    <button class="btn" data-btn-number="7">7</button>
+    <button class="btn" data-btn-number="8">8</button>
+    <button class="btn" data-btn-number="9">9</button>
+    <button class="btn btn-del" data-btn-del="del">del</button>
+    <button class="btn" data-btn-number="4">4</button>
+    <button class="btn" data-btn-number="5">5</button>
+    <button class="btn" data-btn-number="6">6</button>
+    <button class="btn" data-btn-action="+">+</button>
+    <button class="btn" data-btn-number="1">1</button>
+    <button class="btn" data-btn-number="2">2</button>
+    <button class="btn" data-btn-number="3">3</button>
+    <button class="btn" data-btn-action="-">-</button>
+    <button class="btn" data-btn-number=".">.</button>
+    <button class="btn" data-btn-number="0">0</button>
+    <button class="btn" data-btn-action="/">/</button>
+    <button class="btn" data-btn-action="x">x</button>
+    <button class="btn btn-long" data-btn-reset="reset">reset</button>
+    <button class="btn btn-long" data-btn-action="=">=</button>
+  </div>
 </div>
 <script src="./scripts/index.js"></script>
 </body>
